@@ -37,7 +37,7 @@ public class Main {
 		AppFacade facade = new AppFacadeImpl(view);
 		view.registerFacade(facade);
 	}
-	
+
 	public static void dbPopulator(){
 		Endereco endereco = new Endereco();
 		endereco.setBairro("Dirceu");

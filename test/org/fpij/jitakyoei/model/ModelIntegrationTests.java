@@ -1,5 +1,7 @@
 package org.fpij.jitakyoei.model;
 
+import static org.junit.Assert.assertEquals;
+
 import java.util.Date;
 
 import org.fpij.jitakyoei.model.beans.Aluno;
@@ -16,6 +18,8 @@ import org.junit.Test;
 
 public class ModelIntegrationTests {
 	private static DAO<Aluno> alunoDao;
+	private static DAO<Professor> professorDao;
+	private static DAO<Entidade> entidadeDao;
 	private static Aluno aluno;
 	private static Entidade entidade;
 	private static Endereco endereco;
@@ -63,12 +67,31 @@ public class ModelIntegrationTests {
 		aluno.setEntidade(entidade);
 
 		alunoDao = new DAOImpl<Aluno>(Aluno.class);
+		professorDao = new DAOImpl<Professor>(Professor.class);
+		entidadeDao = new DAOImpl<Entidade>(Entidade.class);
 
 	}
 
 	@Test
 	public void testAdicionarAlunos() {
+		int qtd = alunoDao.list().size();
 		alunoDao.save(aluno);
+		assertEquals(qtd + 1, alunoDao.list().size());
+	}
+
+	@Test
+	public void testAdicionarProfessor() {
+		int qtd = professorDao.list().size();
+		professorDao.save(professor);
+		assertEquals(qtd + 1, professorDao.list().size());
+	}
+
+	@Test
+	public void testAdicionarEntidade() {
+		int qtd = entidadeDao.list().size();
+		entidadeDao.save(entidade);
+		assertEquals(qtd + 1, entidadeDao.list().size());
+
 	}
 
 }

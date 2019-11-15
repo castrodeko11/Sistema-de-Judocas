@@ -137,6 +137,7 @@ public class AlunoDaoTest {
 		Aluno a = new Aluno();
 		a.setFiliado(f);
 		
+		
 		List<Aluno> result = alunoDao.search(a);
 		assertEquals(1, result.size());
 		assertEquals("036.464.453-27", result.get(0).getFiliado().getCpf());

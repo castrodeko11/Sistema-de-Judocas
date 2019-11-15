@@ -63,6 +63,7 @@ public class ProfessorDaoTest {
 		professorDao = new DAOImpl<Professor>(Professor.class);
 	}
 
+
 	public static void clearDatabase() {
 		List<Professor> all = professorDao.list();
 		for (Professor each : all) {

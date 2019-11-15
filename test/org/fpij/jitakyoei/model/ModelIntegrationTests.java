@@ -20,6 +20,7 @@ public class ModelIntegrationTests {
 	private static DAO<Aluno> alunoDao;
 	private static DAO<Professor> professorDao;
 	private static DAO<Entidade> entidadeDao;
+	private static DAO<Endereco> enderecoDao;
 	private static Aluno aluno;
 	private static Entidade entidade;
 	private static Endereco endereco;
@@ -69,6 +70,7 @@ public class ModelIntegrationTests {
 		alunoDao = new DAOImpl<Aluno>(Aluno.class);
 		professorDao = new DAOImpl<Professor>(Professor.class);
 		entidadeDao = new DAOImpl<Entidade>(Entidade.class);
+		enderecoDao = new DAOImpl<Endereco>(Endereco.class);
 
 	}
 
@@ -91,6 +93,14 @@ public class ModelIntegrationTests {
 		int qtd = entidadeDao.list().size();
 		entidadeDao.save(entidade);
 		assertEquals(qtd + 1, entidadeDao.list().size());
+
+	}
+	
+	@Test
+	public void testAdicionarEndereco() {
+		int qtd = enderecoDao.list().size();
+		enderecoDao.save(endereco);
+		assertEquals(qtd, enderecoDao.list().size());
 
 	}
 

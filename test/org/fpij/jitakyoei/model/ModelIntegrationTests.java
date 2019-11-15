@@ -97,7 +97,6 @@ public class ModelIntegrationTests {
 
 	}
 	
-	
 	@Test
 	public void testAdicionarEndereco() {
 		int qtd = enderecoDao.list().size();

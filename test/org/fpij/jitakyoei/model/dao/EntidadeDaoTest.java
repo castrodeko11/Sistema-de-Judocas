@@ -17,12 +17,9 @@ import org.junit.Test;
 public class EntidadeDaoTest {
 
 	private static DAO<Entidade> entidadeDao;
-	private static Aluno aluno;
 	private static Entidade entidade;
 	private static Endereco endereco;
-	private static Filiado f1;
-	private static Filiado filiadoProf;
-	private static Professor professor;
+
 
 	@BeforeClass
 	public static void setUp() {

@@ -71,6 +71,7 @@ public class ModelIntegrationTests {
 		professorDao = new DAOImpl<Professor>(Professor.class);
 		entidadeDao = new DAOImpl<Entidade>(Entidade.class);
 		enderecoDao = new DAOImpl<Endereco>(Endereco.class);
+	
 
 	}
 

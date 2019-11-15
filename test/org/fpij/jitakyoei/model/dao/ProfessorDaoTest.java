@@ -18,7 +18,6 @@ import org.junit.Test;
 public class ProfessorDaoTest {
 
 	private static DAO<Professor> professorDao;
-	private static Aluno aluno;
 	private static Entidade entidade;
 	private static Endereco endereco;
 	private static Filiado f1;
@@ -28,21 +27,6 @@ public class ProfessorDaoTest {
 	@BeforeClass
 	public static void setUp() {
 		DatabaseManager.setEnviroment(DatabaseManager.TEST);
-
-		DatabaseManager.setEnviroment(DatabaseManager.TEST);
-		f1 = new Filiado();
-		f1.setNome("Aécio");
-		f1.setCpf("036.464.453-27");
-		f1.setDataNascimento(new Date());
-		f1.setDataCadastro(new Date());
-		f1.setId(1332L);
-		
-		endereco = new Endereco();
-		endereco.setBairro("Dirceu");
-		endereco.setCep("64078-213");
-		endereco.setCidade("Teresina");
-		endereco.setEstado("PI");
-		endereco.setRua("Rua Des. Berilo Mota");
 		
 		filiadoProf = new Filiado();
 		filiadoProf.setNome("Professor");
@@ -55,10 +39,6 @@ public class ProfessorDaoTest {
 		professor = new Professor();
 		professor.setFiliado(filiadoProf);
 		
-		entidade = new Entidade();
-		entidade.setEndereco(endereco);
-		entidade.setNome("Academia 1");
-		entidade.setTelefone1("(086)1234-5432");
 
 		professorDao = new DAOImpl<Professor>(Professor.class);
 	}

@@ -37,11 +37,11 @@ public class Aluno {
 		return false;
 	}
 	
-	@Override
-	public int hashCode() {
-		int hash = 7;
-		return 29 * hash +(this.filiado.getId() != null ? (int)(long)this.filiado.getId() : 0);
-	}
+//	@Override
+//	public int hashCode() {
+//		int hash = 7;
+//		return 29 * hash +(this.filiado.getId() != null ? (int)(long)this.filiado.getId() : 0);
+//	}
 	
 	public void copyProperties(Aluno other){
 		this.filiado.copyProperties(other.getFiliado());
